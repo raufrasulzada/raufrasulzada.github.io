@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  background: url("http://wp1.themexlab.com/wp/cards/wp-content/themes/cards/img/bg1.jpg")
+    center center fixed;
+  background-repeat: no-repeat;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.42857143;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 570px;
+}
+
+#black-line {
+  background-color: black;
+  width: 100%;
+  height: 5px;
+}
+
+.card {
+  background-color: white;
+  background: url("http://wp1.themexlab.com/wp/cards/wp-content/themes/cards/img/bg-card2.png")
+    right top #f4f4f4;
+  background-repeat: repeat-x;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  border: 6px solid #ddd;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.title h1 {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.title h2 {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#guy-name {
+  color: #08aeac;
+}
+
+#thin-line {
+  border: none;
+  height: 1px;
+  width: 70%;
+  background: url(http://wp1.themexlab.com/wp/cards/wp-content/themes/cards/img/hr1.png)
+    no-repeat center center;
+  margin: 10px 0;
+}
+
+.card-body {
+  padding: 0 37px;
+}
+
+.card-body p {
+  font-size: 13px;
+}
+
+.animated-paragraph {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 10px;
+  background: url(http://wp1.themexlab.com/wp/cards/wp-content/themes/cards/img/bg-btn.png)
+    center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-color: #08aeac;
+  transition: all 0.5s ease;
+}
+
+.animated-paragraph:hover {
+  background: red;
+}
+
+.animated-paragraph p {
+  margin: 0;
+  color: white;
+  font-size: 12px;
+}
+
+.icons i {
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+  line-height: 30px;
+  background-color: #333333;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.icons i:hover {
+  background: #08aeac;
+}
+
+#go-back {
+  text-decoration: none;
+  margin-top: 20px;
+  border: 1px solid #08aeac;
+  background: url(http://wp1.themexlab.com/wp/cards/wp-content/themes/cards/img/bg-btn.png)
+    center center;
+  padding: 8px;
+  transition: all 0.5s ease;
+}
+
+#go-back:hover {
+  background-color: #08aeac;
+  border: 1px solid #333333;
+}
