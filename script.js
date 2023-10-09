@@ -79,17 +79,33 @@ const asideSectionTogglerBtn = () => {
 };
 
 function sendMail() {
+  var fromname = document.querySelector("#fromname").value;
+  var email = document.querySelector("#email").value;
+  var subject = document.querySelector("#subject").value;
+  var message = document.querySelector("#message").value;
+
+  if (!fromname || !email || !subject || !message) {
+    alert("Please fill in all the required fields.");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
   (function () {
     emailjs.init("9f6Z5fUKO8dnqRN6o");
   })();
 
   var params = {
-    fromname: document.querySelector("#fromname").value,
-    email: document.querySelector("#email").value,
+    fromname: fromname,
+    email: email,
     to: "rauf.rasulzade0@gmail.com",
-    subject: document.querySelector("#subject").value,
-    message: document.querySelector("#message").value,
+    subject: subject,
+    message: message,
   };
+
   var serviceID = "service_057o84s";
   var templateID = "template_8ejkedh";
 
@@ -99,9 +115,12 @@ function sendMail() {
       alert(
         "Thank you, " + params["fromname"] + "! Your message has been sent."
       );
+      resetMail();
     })
-    .catch();
-  resetMail();
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending the email.");
+    });
 }
 
 function resetMail() {
@@ -109,4 +128,9 @@ function resetMail() {
   document.querySelector("#email").value = "";
   document.querySelector("#subject").value = "";
   document.querySelector("#message").value = "";
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
